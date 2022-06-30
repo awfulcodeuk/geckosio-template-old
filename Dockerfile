@@ -5,7 +5,8 @@ WORKDIR /app
 
 # copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
-COPY webpack.config.cjs ./
+COPY /webpack/webpack.common.cjs ./
+COPY /webpack/webpack.prod.cjs ./
 
 # install project dependencies
 RUN npm install
