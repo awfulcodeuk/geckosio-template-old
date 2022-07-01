@@ -23,6 +23,7 @@ specifiers:
   webpack-dev-server: ^4.6.0
   webpack-merge: ^5.8.0
   webpack-obfuscator: ^3.5.0
+  workbox-precaching: ^6.5.3
   workbox-webpack-plugin: ^6.4.2
 
 dependencies:
@@ -50,6 +51,7 @@ devDependencies:
   webpack-dev-server: 4.9.3_77l47gmqkrqiei5z7sbwz5iaj4
   webpack-merge: 5.8.0
   webpack-obfuscator: 3.5.1_p3ynsn2nt2mdreuj5swnci7hxm
+  workbox-precaching: 6.5.3
   workbox-webpack-plugin: 6.5.3_webpack@5.73.0
 
 packages:
