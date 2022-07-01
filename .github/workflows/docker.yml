@@ -27,6 +27,8 @@ jobs:
           context: .
           push: true
           tags: localhost:5000/template-geckosio/template-geckosio:latest
+          cache-from: type=registry,ref=user/app:latest
+          cache-to: type=inline
       -
         name: Inspect
         run: |
