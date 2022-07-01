@@ -10,13 +10,15 @@ USER node
 # copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
 
+# copy pnpm-lock.yaml
+COPY pnpm-lock.yaml ./
+
 # install project dependencies
 RUN pnpm install
 
 COPY . .
 
 RUN npm run build
-RUN npm prune --production
 
 # set environment to be production
 ARG NODE_ENV=production
