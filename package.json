@@ -12,33 +12,31 @@
     "format": "prettier --check src/scripts/**",
     "format:write": "prettier --write src/scripts/**"
   },
-  "keywords": [
-    "Phaser",
-    "Phaser 3",
-    "Phaser3",
-    "html5 game",
-    "TypeScript",
-    "webpack",
-    "starter"
-  ],
   "author": {
     "name": "David Cartwright",
     "url": "https://awfulcode.co.uk"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yandeu/phaser-project-template.git"
+    "url": "https://github.com/awfulcodeuk/phaser-project-template"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "license": "MIT",
   "dependencies": {
+    "@geckos.io/client": "^2.2.1",
+    "@geckos.io/phaser-on-nodejs": "^1.2.7",
+    "@geckos.io/server": "^2.2.1",
+    "@geckos.io/snapshot-interpolation": "^1.1.0",
+    "@geckos.io/typed-array-buffer-schema": "^1.2.0",
+    "express": "^4.18.1",
     "phaser": "^3.55.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.0",
     "copy-webpack-plugin": "^10.1.0",
+    "eslint": "^8.15.0",
     "html-webpack-plugin": "^5.5.0",
     "javascript-obfuscator": "^4.0.0",
     "prettier": "^2.5.1",
