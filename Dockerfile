@@ -5,9 +5,6 @@ WORKDIR /app
 RUN chown node:node ./
 USER node
 
-# set environment to be production
-ARG NODE_ENV=production
-ENV NODE_ENV $NODE_ENV
 
 # copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
