@@ -11,9 +11,6 @@ RUN npm install
 
 COPY . .
 
-COPY webpack/webpack.common.cjs ./
-COPY webpack/webpack.prod.cjs ./
-
 RUN npm run build
 
 RUN ls -al /app
