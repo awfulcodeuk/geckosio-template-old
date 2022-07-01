@@ -11,11 +11,12 @@ USER node
 COPY package*.json ./
 
 # install project dependencies
-RUN pnpm install --production
+RUN pnpm install
 
 COPY . .
 
 RUN npm run build
+RUN npm prune --production
 
 # set environment to be production
 ARG NODE_ENV=production
