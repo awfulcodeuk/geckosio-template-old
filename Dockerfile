@@ -1,5 +1,7 @@
 FROM node:lts-gallium
 
+RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
+
 # use node user instead of root
 WORKDIR /app
 RUN chown node:node ./
@@ -9,7 +11,7 @@ USER node
 COPY package*.json ./
 
 # install project dependencies
-RUN npm install
+RUN pnpm install
 
 COPY . .
 
