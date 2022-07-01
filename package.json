@@ -1,8 +1,8 @@
 {
-  "name": "phaser-project-template",
-  "version": "3.55.2",
-  "description": "Phaser 3 starter template with TypeScript and webpack.",
-  "homepage": "https://github.com/yandeu/phaser-project-template#readme",
+  "name": "geckosio-template",
+  "version": "1.0",
+  "description": "Template for Geckosio, TypeScript and webpack.  Based on: https://github.com/yandeu/phaser-project-template",
+  "homepage": "https://github.com/awfulcodeuk/geckosio-template",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --config webpack/webpack.dev.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/awfulcodeuk/phaser-project-template"
+    "url": "https://github.com/awfulcodeuk/geckosio-template"
   },
   "engines": {
     "node": ">=16"
