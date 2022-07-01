@@ -11,7 +11,7 @@ USER node
 COPY package*.json ./
 
 # install project dependencies
-RUN pnpm install
+RUN pnpm install --production
 
 COPY . .
 
