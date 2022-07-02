@@ -1,4 +1,6 @@
-FROM node:lts-gallium
+FROM alpine
+
+RUN apk add --update nodejs npm
 
 RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
 
@@ -12,14 +14,6 @@ COPY package.json ./
 
 # copy 'pnpm-lock.yaml'
 COPY pnpm-lock.yaml ./
-
-# mount pnpm cache to save having to redownload all the time
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
- pnpm install --filter "{${PACKAGE_PATH}}..."\
- --frozen-lockfile\
- --unsafe-perm\
- # ↑ Docker runs pnpm as root and then pnpm won't run package scripts unless we pass this arg
- | grep -v "cross-device link not permitted\|Falling back to copying packages from store"
 
 # install project dependencies
 RUN pnpm install
