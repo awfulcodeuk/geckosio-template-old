@@ -4,6 +4,8 @@ FROM node:lts-bullseye-slim
 
 #RUN apk add --update nodejs npm
 
+RUN apt install curl
+
 RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
 
 #RUN apk add --update python3 py3-pip
