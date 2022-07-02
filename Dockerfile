@@ -1,6 +1,6 @@
 FROM node:lts-bullseye-slim
 
-#RUN apk --no-cache add curl
+RUN apk --no-cache add curl
 
 #RUN apk add --update nodejs npm
 
