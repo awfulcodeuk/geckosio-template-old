@@ -13,7 +13,7 @@ COPY package.json ./
 # copy 'pnpm-lock.yaml'
 COPY pnpm-lock.yaml ./
 
-# mount pnpm cache to save having to redownload all the time 
+# mount pnpm cache to save having to redownload all the time
 RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
  --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
  pnpm install --frozen-lockfile\
