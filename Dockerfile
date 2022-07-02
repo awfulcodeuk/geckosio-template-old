@@ -13,7 +13,7 @@ RUN apk add pkgconfig
 
 RUN apk add pixman-dev
 
-RUN apk add --no-cache build-base cairo-dev cairo cairo-tools
+RUN apk add --no-cache build-base cairo-dev cairo cairo-tools pangocairo
 
 # use node user instead of root
 WORKDIR /app
