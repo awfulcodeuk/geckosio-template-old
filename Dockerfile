@@ -1,20 +1,19 @@
-FROM node:lts-bullseye-slim
+FROM alpine
 
-#RUN apk --no-cache add curl
+RUN apk --no-cache add curl
 
-#RUN apk add --update nodejs npm
+RUN apk add --update nodejs npm
 
-RUN apt install curl
 
 RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
 
-#RUN apk add --update python3 py3-pip
+RUN apk add --update python3 py3-pip
 
-#RUN apk add pkgconfig
+RUN apk add pkgconfig
 
-#RUN apk add pixman-dev
+RUN apk add pixman-dev
 
-#RUN apk add --no-cache build-base cairo-dev cairo cairo-tools
+RUN apk add --no-cache build-base cairo-dev cairo cairo-tools
 
 # use node user instead of root
 WORKDIR /app
