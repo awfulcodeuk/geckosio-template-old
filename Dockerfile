@@ -11,9 +11,14 @@ RUN apk add --update python3 py3-pip
 
 RUN apk add pkgconfig
 
-RUN apk add pixman-dev
-
-RUN apk add --no-cache build-base cairo-dev cairo cairo-tools pangocairo
+RUN apk add --no-cache libc6-compat
+RUN apk add --update --no-cache \
+  build-base \
+  g++ \
+  cairo-dev \
+  jpeg-dev \
+  pango-dev \
+  giflib-dev
 
 # use node user instead of root
 WORKDIR /app
