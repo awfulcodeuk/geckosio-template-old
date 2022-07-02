@@ -1,33 +1,25 @@
-FROM alpine
-
-RUN apk --no-cache add curl
-
-RUN apk add --update nodejs npm
-
+FROM node:lts-gallium
 
 RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
 
-RUN apk add --update python3 py3-pip
-
-RUN apk add pkgconfig
-
-RUN apk add --no-cache libc6-compat
-RUN apk add --update --no-cache \
-  build-base \
-  g++ \
-  cairo-dev \
-  jpeg-dev \
-  pango-dev \
-  giflib-dev
-
 # use node user instead of root
 WORKDIR /app
+RUN chown node:node ./
+USER node
 
 # copy 'package.json'
 COPY package.json ./
 
 # copy 'pnpm-lock.yaml'
 COPY pnpm-lock.yaml ./
+
+# mount pnpm cache to save having to redownload all the time
+RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+ --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+ pnpm install --frozen-lockfile\
+ --unsafe-perm\
+ # ↑ Docker runs pnpm as root and then pnpm won't run package scripts unless we pass this arg
+ | grep -v "cross-device link not permitted\|Falling back to copying packages from store"
 
 # install project dependencies
 RUN pnpm install
