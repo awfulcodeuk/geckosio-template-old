@@ -1,14 +1,16 @@
-FROM node:lts-bullseye-slim
+FROM alpine
 
 RUN apk --no-cache add curl
 
-#RUN apk add --update nodejs npm
+RUN apk add --update nodejs npm
 
 RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
 
-#RUN apk add --update python3 py3-pip
+RUN apk add --update python3 py3-pip
 
-#RUN apk add pkgconfig
+RUN apk add pkgconfig
+
+RUN apk add pixman-dev
 
 # use node user instead of root
 WORKDIR /app
