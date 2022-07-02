@@ -8,6 +8,8 @@ RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
 
 RUN apk add --update python3 py3-pip
 
+RUN apk add pkgconfig
+
 # use node user instead of root
 WORKDIR /app
 
