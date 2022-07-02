@@ -1,4 +1,4 @@
-FROM alpine
+FROM node:lts-bullseye-slim
 
 RUN apk --no-cache add curl
 
