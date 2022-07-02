@@ -1,4 +1,6 @@
-FROM node:16-alpine
+FROM alpine
+
+RUN apk --no-cache add curl
 
 RUN apk add --update nodejs npm
 
