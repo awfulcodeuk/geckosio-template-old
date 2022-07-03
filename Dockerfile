@@ -1,4 +1,4 @@
-FROM node:lts-gallium
+FROM localhost:5001/node:lts-gallium
 
 RUN curl -sL https://unpkg.com/@pnpm/self-installer | node
 
